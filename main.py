@@ -95,7 +95,7 @@ def extract_image_data(image_bytes):
     data = buf.getvalue()
     # Call Gemini OCR
     response = gemini_client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-1.5-flash",
         contents=[
             "Provide only JSON: store_name, date (YYYY-MM-DD), total_amount (float), items (list of {item_name, quantity, total_price})",
             types.Part.from_bytes(data=data, mime_type="image/jpeg")
